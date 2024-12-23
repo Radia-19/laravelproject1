@@ -20,7 +20,8 @@
             <form class="d-flex">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                     @if(Auth::check())
-                    <li class="nav-item"><a class="nav-link" href="#!">Logout</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('user.upload.show') }}">Upload</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('user.logout') }}">({{ Auth::user()->username }})Logout</a></li>
                     @else
                     <li class="nav-item"><a class="nav-link" href="{{ route('user.login.show') }}">Login</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('user.register.show') }}">Register</a></li>

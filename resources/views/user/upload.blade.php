@@ -20,4 +20,3 @@
 @push('js')
 
 @endpush
-
