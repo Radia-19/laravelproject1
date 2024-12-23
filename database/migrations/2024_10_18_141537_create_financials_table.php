@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('financials', function (Blueprint $table) {
             $table->id();
             $table->foreignId( 'user_id')->constrained()->onDelete('cascade');
-            $table->double( 'balance')->default(0.00);
+            $table->decimal( 'balance')->default(0.00);
             $table->timestamps();
         });
     }

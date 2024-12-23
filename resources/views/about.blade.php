@@ -1,6 +1,6 @@
 @extends('layouts.userLayout')
 
-@section('title','Blog')
+@section('title','About')
 
 @section('slider')
     @include('partials.slider')
