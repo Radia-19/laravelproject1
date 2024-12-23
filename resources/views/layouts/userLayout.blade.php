@@ -23,6 +23,7 @@
     @include('includes.header')
 
     @yield('slider')
+    
     @yield('content')
 
     @include('includes.footer')
