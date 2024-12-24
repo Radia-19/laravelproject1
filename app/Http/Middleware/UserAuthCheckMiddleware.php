@@ -6,6 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class UserAuthCheckMiddleware
 {
@@ -16,9 +17,11 @@ class UserAuthCheckMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth::guard("web")->check()){
+        Log::info('UserAuthCheckMiddleware executed for route: ' . $request->path());
+        if(Auth::check()){
             return $next($request);
         }else{
+            Log::warning('Unauthenticated access attempt to: ' . $request->path());
             return to_route('user.login.show')->with('errMsg','You Must Login First!');
         }
 

@@ -1,11 +1,13 @@
 <!-- Sidebar -->
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('home') }}">
-        <div class="sidebar-brand-text mx-3">
-            <img style="height: 20px;"  src="{{ asset('admin/img/7j0XhM-LogoMakr.png')}}"  alt="Example Image">Fotosale
+        <div class="sidebar-brand-icon">
+            {{-- <img style="height: 20px;"  src="{{ asset('admin/img/7j0XhM-LogoMakr.png')}}"  alt="Example Image"> --}}
+            <i class="bi bi-camera2"></i>
         </div>
+        <div class="sidebar-brand-text mx-3">FotoSale</div>
     </a>
 
     <!-- Divider -->
@@ -13,9 +15,18 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="{{ route('home') }}">
+        <a class="nav-link" href="{{ route('admin.dashboard') }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <li class="nav-item active">
+        <a class="nav-link" href="{{ route('admin.approval.show') }}">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Approval</span></a>
     </li>
 
     <!-- Divider -->

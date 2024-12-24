@@ -8,22 +8,22 @@ use Illuminate\View\Component;
 
 class  Card extends Component
 {
-    public $sale;
-    public $itemName;
-    public $star;
-    public $cutPrice;
-    public $price;
-
+    public $imageName;
+    public $imageDetails;
+    public $image;
+    public $status;
+    public $imageData;
     /**
      * Create a new component instance.
      */
-    public function __construct($itemName,$sale=false,$star=0,$cutPrice=false,$price='0.00')
+    public function __construct($imageData,$imageName,$imageDetails,$image,$status)
     {
-        $this->sale = $sale;
-        $this->itemName = $itemName;
-        $this->star = $star;
-        $this->cutPrice = $cutPrice;
-        $this->price = $price;
+        $this->imageName = $imageName;
+        $this->imageDetails = $imageDetails;
+        $this->image = $image;
+        $this->status = $status;
+        $this->imageData = $imageData;
+
     }
 
     /**

@@ -31,7 +31,7 @@
                     <input type="submit" name="submit" value="register" class="mt-2 mb-2 btn btn-info w-100">
                     </div>
                     <div class="text-center mb-5">
-                        <p>Already Have An Account? <a href="{{ url('/login') }}">Login Here</a></p>
+                        <p>Already Have An Account? <a class="text-info" href="{{ url('/login') }}">Login Here</a></p>
                     </div>
                 </form>
             </div>
