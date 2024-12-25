@@ -16,7 +16,7 @@ class  Card extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct($imageData,$imageName,$imageDetails,$image,$status)
+    public function __construct($imageName,$imageDetails,$image,$status=null,$imageData=null)
     {
         $this->imageName = $imageName;
         $this->imageDetails = $imageDetails;

@@ -17,28 +17,20 @@ class MyImageController extends Controller
        $userImages = Photo::where('user_id',Auth::id())->paginate(3); //ELOQUENT + QUERY BUILDER
        return view('user.myImages',compact('userImages'));
     }
-    // public function store(Request $request )
-    // {
-    //     $validated = $request->validate([
-    //         'name'=> 'required|unique:photos,name',
-    //         'details'=> 'required',
-    //         'image'=> 'required|image|mimes:jpg,jpeg,png|max:2048',
-    //         'status'=> 'required'
-    //         ]);
+    public function sendForSale($imageId)
+    {
+        $image = Photo::findOrFail($imageId);
 
-    //     // if(\request()->hasFile('image')){
-    //     // }
+        if($image->user_id == Auth::id()){
 
-    //     //$imageName = uniqid().sha1(rand(100,9000)).'.'.request()->file('image')->extension();
-    //     //\request()->file('image')->move(public_path('uploads/'),$imageName);
-    //     Photo::create([
-    //         'user_id'=> Auth::id(),
-    //         'name'=> $request->name,
-    //         'details' => $request->details,
-    //         'image'=> $request->image,
-    //         'status'=> $request->status,
-    //     ]);
-    //     return redirect()->back()->with('okMsg','Uploaded Successfully');
-    // }
+            $image->update([
+                  'status' => 'selling'
+            ]);
+            return redirect()->back();
+        }else{
+            return 'Hacker Found!';
+        }
+
+    }
 
 }

@@ -19,8 +19,7 @@ class UserUploadController extends Controller
         $validated = $request->validate([
             'name'=> 'required|unique:photos,name',
             'details'=> 'required',
-            'image'=> 'required|image|mimes:jpg,jpeg,png|max:2048',
-            'status'=> 'required'
+            'image'=> 'required|image|mimes:jpg,jpeg,png|max:2048'
             ]);
 
         // if(\request()->hasFile('image')){
@@ -32,8 +31,7 @@ class UserUploadController extends Controller
             'user_id'=> Auth::id(),
             'name'=> $request->name,
             'details' => $request->details,
-            'image'=> $imageName,
-            'status'=> $request->status,
+            'image'=> $imageName
         ]);
         return redirect()->back()->with('okMsg','Uploaded Successfully');
     }

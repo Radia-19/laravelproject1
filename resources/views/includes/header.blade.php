@@ -21,6 +21,7 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                     @if(Auth::check())
                     <li class="nav-item"><a class="nav-link" href="{{ route('user.upload.show') }}">Upload</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('user.myFinancial.show') }}">Financial</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('user.myImages.show') }}">Images</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('user.logout') }}">({{ Auth::user()->username }})Logout</a></li>
                     @else

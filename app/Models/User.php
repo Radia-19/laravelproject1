@@ -46,9 +46,14 @@ class User extends Authenticatable
         return $this->hasOne(Financial::class);
     }
 
-    public function photos()
+    public function photo()
     {
         return $this->hasMany(Photo::class);
+    }
+
+    public function cashout()
+    {
+        return $this->hasMany(Cashout::class);
     }
 
 }

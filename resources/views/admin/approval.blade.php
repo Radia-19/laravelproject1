@@ -15,7 +15,7 @@
             <table class="table table-info table-hover table-bordered text-dark">
                 <thead>
                   <tr>
-                    <th scope="col">Image Id</th>
+                    <th scope="col">Image ID</th>
                     <th scope="col">Image</th>
                     <th scope="col">User</th>
                     <th scope="col">Upload Date</th>
@@ -26,7 +26,7 @@
                 @forelse($pendingImages as $image)
                   <tr>
                     <th scope="row">{{ $image->id }}</th>
-                    <td><img src="{{ asset('uploads').'/'.$image->image }}" style="height: 200px; width: 200px;"></td>
+                    <td><img src="{{ asset('uploads').'/'.$image->image }}" style="height: 150px; width: 150px;"></td>
                     <td>{{ $image->user->username }}</td>
                     <td>{{{ date('Y-m-d',strtotime($image->created_at)) }}}</td>
                     <td>

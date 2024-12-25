@@ -22,7 +22,7 @@ return new class extends Migration
             $table->unsignedBigInteger( 'buyout_by')->nullable();
             $table->dateTime( 'buyout_date')->nullable();
             $table->decimal( 'rate', 8, 2)->nullable();
-            $table->enum( 'status',['pending','approved','declined','selling','buy-out','approve_unselleble'])->default('pending');
+            $table->enum( 'status',['pending','approved','declined','selling','buy-out','approve_unsellable'])->default('pending');
             $table->timestamps();
 
             //MANUAL FOREIGN KEY SETUPS

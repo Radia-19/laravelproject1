@@ -19,12 +19,24 @@ class AdminAuthCheckMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
+
         if(Auth::guard("admin")->check()) {
-            Log::info('Admin authenticated: ' . Auth::guard('admin')->user()->id);
+            Log::info('Admin is logged in');
+            //dd(session()->all());
+
             return $next($request);
+            //dd('Admin middleware is working: Admin is not logged in');
         }else{
-            Log::warning('Unauthenticated admin access attempt: ' . $request->path());
+            Log::info('Admin is NOT logged in');
             return redirect()->route('admin.login.show');
         }
     }
+
+
+    // public function handle($request, Closure $next)
+    // {
+    //     dd(app('router')->getMiddleware());
+    //     return $next($request);
+    // }
+
 }

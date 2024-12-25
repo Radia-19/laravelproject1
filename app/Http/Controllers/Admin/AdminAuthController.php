@@ -19,10 +19,7 @@ class AdminAuthController extends Controller
             'password' => 'required',
         ]);
 
-        if (Auth::guard('admin')->attempt([
-            'username' => $request->username,
-            'password' => $request->password
-            ])){
+        if (Auth::guard('admin')->attempt($request->only('username', 'password'))){
             return redirect()->route('admin.dashboard')->with('success', 'Login successful.');
         }else{
             return redirect()->route('admin.login.show')->with('errMsg', 'Invalid credentials.');
@@ -30,7 +27,7 @@ class AdminAuthController extends Controller
     }
     public function logout()
     {
-        Auth::logout();
-        return redirect()->route('home');
+        Auth::guard('admin')->logout();
+        return redirect()->route('admin.login.show')->with('success', 'Logged out successfully.');
     }
 }

@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('posts', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('cashouts', function (Blueprint $table) {
+            $table->decimal('amount', 10, 2);
         });
     }
 
@@ -22,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('posts');
+        Schema::table('cashouts', function (Blueprint $table) {
+            $table->dropColumn('amount');
+        });
     }
 };

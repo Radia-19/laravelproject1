@@ -25,12 +25,22 @@
 
     <li class="nav-item active">
         <a class="nav-link" href="{{ route('admin.approval.show') }}">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+            {{--<i class="fas fa-fw fa-tachometer-alt"></i> --}}
+            <i class="bi bi-door-open-fill"></i>
             <span>Approval</span></a>
     </li>
 
-    <!-- Divider -->
-    <hr class="sidebar-divider">
+    <li class="nav-item active">
+        <a class="nav-link" href="{{ route('admin.buyout.show') }}">
+            <i class="bi bi-bag-heart-fill"></i>
+            <span>Buyout</span></a>
+    </li>
+
+    <li class="nav-item active">
+        <a class="nav-link" href="{{ route('admin.cashout.show') }}">
+            <i class="bi bi-cash-coin"></i>
+            <span>Cashout</span></a>
+    </li>
 
     <!-- Heading -->
     <div class="sidebar-heading">
